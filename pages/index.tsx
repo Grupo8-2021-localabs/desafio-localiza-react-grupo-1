@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Login from '../src/templates/Login/Login';
 import { HomeContainer } from './Home.style';
 
 export default function Home() {
@@ -8,9 +7,7 @@ export default function Home() {
       <Head>
         <title>Desafio Localiza</title>
       </Head>
-      <HomeContainer>
-        <Login />
-      </HomeContainer>
+      <HomeContainer>Teste</HomeContainer>
     </>
   );
 }

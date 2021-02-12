@@ -5,6 +5,36 @@ interface IInputTag extends InputHTMLAttributes<HTMLInputElement> {
   disabled: boolean;
 }
 
+export const Content = styled.div`
+  display: flex;
+  margin-left: -3px;
+`;
+
+export const IconContentLeft = styled.div`
+  background: #f2f2fa;
+  margin-right: 1px;
+  margin-left: 2px;
+  margin-top: 0px;
+
+  .icon-left {
+    position: relative;
+    top: 17px;
+    margin: 11px 16px;
+  }
+`;
+
+export const IconContentRight = styled.div`
+  background: #f2f2fa;
+  margin-left: 2px;
+  margin-top: 0px;
+
+  .icon-right {
+    position: relative;
+    top: 17px;
+    margin: 11px 16px;
+  }
+`;
+
 export const InputTag = styled.input<IInputTag>`
   width: 327px;
   height: 56px;
@@ -28,11 +58,6 @@ export const InputContainer = styled.div`
     display: block;
     font-size: 14px;
     color: #374151;
-  }
-
-  .icon-left,
-  .icon-right {
-    padding: 0 8px;
   }
 `;
 

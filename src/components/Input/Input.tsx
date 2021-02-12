@@ -1,6 +1,13 @@
 /* eslint-disable object-curly-newline */
 import { FC } from 'react';
-import { InputContainer, InputTag, Error } from './styled-components';
+import {
+  InputContainer,
+  Content,
+  IconContentLeft,
+  IconContentRight,
+  InputTag,
+  Error,
+} from './styled-components';
 import { IProps } from './types';
 
 const Input: FC<IProps> = ({
@@ -14,11 +21,15 @@ const Input: FC<IProps> = ({
 }) => (
   <InputContainer>
     <label htmlFor={label}>{label}</label>
-    <div className="input-block">
-      {iconLeft && <span className="icon-left">{iconLeft}</span>}
-      <InputTag id={label} disabled={disabled} {...rest} />
-      {iconRight && <span className="icon-right">{iconRight}</span>}
-    </div>
+    <Content>
+      <IconContentLeft>{iconLeft && <span className="icon-left">{iconLeft}</span>}</IconContentLeft>
+      <div className="input-block">
+        <InputTag id={label} disabled={disabled} placeholder={placeholder} {...rest} />
+      </div>
+      <IconContentRight>
+        {iconRight && <span className="icon-right">{iconRight}</span>}
+      </IconContentRight>
+    </Content>
     {error && <Error>{error}</Error>}
   </InputContainer>
 );
