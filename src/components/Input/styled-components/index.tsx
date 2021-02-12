@@ -12,10 +12,7 @@ export const InputTag = styled.input<IInputTag>`
   outline: none;
   padding: 5px 10px;
   background: #f2f2fa;
-
-  /*  &:focus {
-    border-color: #9ca3af;
-  } */
+  margin-left: 2px;
 
   &:disabled,
   &[disabled] {
