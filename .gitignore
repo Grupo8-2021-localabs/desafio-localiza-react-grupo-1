@@ -8,6 +8,8 @@
 # storybook-static
 /storybook-static
 
+.eslintcache
+
 # testing
 /coverage
 
