@@ -9,7 +9,11 @@ export default {
   argTypes: {
     car: { control: 'text' },
     brand: { control: 'text' },
-    dailyRate: { control: 'text' },
+    dailyRate: {
+      control: {
+        type: 'range', min: 80, max: 600, step: 1,
+      },
+    },
   },
 } as Meta;
 
