@@ -1,23 +1,19 @@
 import { FC } from 'react';
 import { IProps } from './types';
+import CardHeader from './components/CardHeader';
+import {
+  Container,
+  Image,
+} from './styled-components';
 
-const HomeCarCard: FC<IProps> = ({
-  car,
-  brand,
-  dailyRate,
-}: IProps) => {
-  const localeDailyRate = dailyRate.toLocaleString(
-    'pt-BR',
-    { style: 'currency', currency: 'BRL' },
-  );
-  return (
-    <div>
-      <h6>{brand}</h6>
-      <h3>{car}</h3>
-      <h6>AO DIA</h6>
-      <h3>{localeDailyRate}</h3>
-    </div>
-  );
-};
+const HomeCarCard: FC<IProps> = ({ car, ...props }: IProps) => (
+  <Container>
+    <CardHeader
+      car={car}
+      {...props}
+    />
+    <Image src="https://via.placeholder.com/252x119" alt={car} />
+  </Container>
+);
 
 export default HomeCarCard;

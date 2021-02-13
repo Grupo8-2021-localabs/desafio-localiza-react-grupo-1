@@ -32,14 +32,19 @@ describe('<HomeCarCard>', () => {
     // @todo: fix this test
     // const localeDailyRate = defaultDailyRate.toLocaleString(
     //   'pt-BR',
-    //   { style: 'currency', currency: 'BRL' },
+    //   {
+    //     style: 'currency',
+    //     currency: 'BRL',
+    //     minimumFractionDigits: 0,
+    //     maximumFractionDigits: 0,
+    //   },
     // );
     // screen.getByText(String(localeDailyRate));
   });
-  it('deve conter o text "AO DIA"', () => {
+  it('deve conter o text "ao dia"', () => {
     render(<HomeCarCard
       {...createHomeCarCardProps()}
     />);
-    screen.getByText('AO DIA');
+    screen.getByText(/ao dia/i);
   });
 });
