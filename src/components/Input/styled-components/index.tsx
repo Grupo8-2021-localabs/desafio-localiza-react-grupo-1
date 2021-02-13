@@ -36,7 +36,7 @@ export const IconContentRight = styled.div`
 `;
 
 export const InputTag = styled.input<IInputTag>`
-  width: 327px;
+  width: 100%;
   height: 56px;
   border: none;
   outline: none;
