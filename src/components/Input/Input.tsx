@@ -1,0 +1,37 @@
+/* eslint-disable object-curly-newline */
+import { FC } from 'react';
+import {
+  InputContainer,
+  Content,
+  IconContentLeft,
+  IconContentRight,
+  InputTag,
+  Error,
+} from './styled-components';
+import { IProps } from './types';
+
+const Input: FC<IProps> = ({
+  disabled = false,
+  iconLeft,
+  iconRight,
+  label,
+  error,
+  placeholder,
+  ...rest
+}) => (
+  <InputContainer>
+    <label htmlFor={label}>{label}</label>
+    <Content>
+      <IconContentLeft>{iconLeft && <span className="icon-left">{iconLeft}</span>}</IconContentLeft>
+      <div className="input-block">
+        <InputTag id={label} disabled={disabled} placeholder={placeholder} {...rest} />
+      </div>
+      <IconContentRight>
+        {iconRight && <span className="icon-right">{iconRight}</span>}
+      </IconContentRight>
+    </Content>
+    {error && <Error>{error}</Error>}
+  </InputContainer>
+);
+
+export default Input;
