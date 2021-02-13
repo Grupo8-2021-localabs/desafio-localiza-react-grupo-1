@@ -2,7 +2,7 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import EmailIcon from '../../components/icons/EmailIcon/EmailIcon';
 import PasswordIcon from '../../components/icons/PasswordIcon/PasswordIcon';
-import { Container, ContentTitle } from './styled-components/index';
+import { Container, ContentTitle, TextLinkRegister } from './styled-components/index';
 
 const Login = () => (
   <Container>
@@ -22,6 +22,11 @@ const Login = () => (
         iconLeft={<PasswordIcon />}
         className="input-style"
       />
+      <TextLinkRegister>
+        <a href="https://www.localiza.com/brasil/pt-br/cadastro/dados-pessoais">
+          Ainda não sou cliente
+        </a>
+      </TextLinkRegister>
 
       <div className="button-container">
         <Button className="button-style">Login</Button>

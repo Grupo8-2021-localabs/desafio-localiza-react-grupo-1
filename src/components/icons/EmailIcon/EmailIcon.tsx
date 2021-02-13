@@ -1,7 +1,6 @@
-function EmailIcon({ className, props }) {
+function EmailIcon(props) {
   return (
     <svg
-      className={className}
       width={24}
       height={24}
       viewBox="0 0 24 24"

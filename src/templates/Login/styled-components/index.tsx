@@ -54,3 +54,13 @@ export const ContentTitle = styled.div`
     width: 260px;
   }
 `;
+
+export const TextLinkRegister = styled.div`
+  margin-top: 32px;
+  text-align: center;
+  a {
+    font-size: 13px;
+    text-decoration: underline;
+    color: #737380;
+  }
+`;
