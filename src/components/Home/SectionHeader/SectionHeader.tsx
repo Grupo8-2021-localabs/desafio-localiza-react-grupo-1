@@ -3,7 +3,7 @@ import { IProps } from './types';
 import { Container, LeftBox } from './styled-components';
 import OptionsIcon from '../../icons/OptionsIcon';
 
-const HomeCarCard: FC<IProps> = () => (
+const SectionHeader: FC<IProps> = () => (
   <Container>
     <h1>Resultados</h1>
     <LeftBox>
@@ -13,4 +13,4 @@ const HomeCarCard: FC<IProps> = () => (
   </Container>
 );
 
-export default HomeCarCard;
+export default SectionHeader;
