@@ -7,7 +7,7 @@ import {
   Image,
 } from './styled-components';
 
-const HomeCarCard: FC<IProps> = ({
+const CarCard: FC<IProps> = ({
   car, imageArray, fuelType, ...props
 }: IProps) => (
   <Container>
@@ -20,4 +20,4 @@ const HomeCarCard: FC<IProps> = ({
   </Container>
 );
 
-export default HomeCarCard;
+export default CarCard;

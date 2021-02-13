@@ -9,7 +9,7 @@ export const defaultImageArray = [
 ];
 export const defaultFuelType = 'energy';
 
-export const createHomeCarCardProps = (customizedProps? : Partial<IProps>) : IProps => ({
+export const createCarCardProps = (customizedProps? : Partial<IProps>) : IProps => ({
   car: defaultCar,
   brand: defaultBrand,
   dailyRate: defaultDailyRate,
@@ -18,4 +18,4 @@ export const createHomeCarCardProps = (customizedProps? : Partial<IProps>) : IPr
   ...customizedProps,
 });
 
-export default createHomeCarCardProps;
+export default createCarCardProps;

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { IProps } from '../types';
 import { FooterContainer } from '../styled-components';
-import EnergyIcon from '../../icons/EnergyIcon';
-import HybridIcon from '../../icons/HybridIcon';
-import GasolineIcon from '../../icons/GasolineIcon';
+import EnergyIcon from '../../../icons/EnergyIcon';
+import HybridIcon from '../../../icons/HybridIcon';
+import GasolineIcon from '../../../icons/GasolineIcon';
 import NavDots from './NavDots';
 
 const renderElementWithColor = (Element) => (color) => <Element color={color} />;

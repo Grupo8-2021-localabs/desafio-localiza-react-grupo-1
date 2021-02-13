@@ -1,46 +1,46 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
-import HomeCarCard from './HomeCarCard';
+import CarCard from './CarCard';
 import {
   defaultImageArray,
   defaultDailyRate,
   defaultBrand,
   defaultCar,
-  createHomeCarCardProps,
+  createCarCardProps,
 } from './helpers/factory';
 
 describe('<HomeCarCard>', () => {
   it('deve renderizar o nome do carro', () => {
-    render(<HomeCarCard
-      {...createHomeCarCardProps()}
+    render(<CarCard
+      {...createCarCardProps()}
     />);
     screen.getByText(defaultCar);
   });
   it('deve renderizar o nome da marca', () => {
-    render(<HomeCarCard
-      {...createHomeCarCardProps()}
+    render(<CarCard
+      {...createCarCardProps()}
     />);
     screen.getByText(defaultBrand);
   });
   it('deve renderizar o preço da diária em reais', () => {
     render(
       <div data-testid="card">
-        <HomeCarCard
-          {...createHomeCarCardProps()}
+        <CarCard
+          {...createCarCardProps()}
         />
       </div>,
     );
     screen.getByText(`R$ ${defaultDailyRate}`);
   });
   it('deve conter o text "ao dia"', () => {
-    render(<HomeCarCard
-      {...createHomeCarCardProps()}
+    render(<CarCard
+      {...createCarCardProps()}
     />);
     screen.getByText(/ao dia/i);
   });
   it('deve conter uma imagem com o link"', () => {
-    render(<HomeCarCard
-      {...createHomeCarCardProps()}
+    render(<CarCard
+      {...createCarCardProps()}
     />);
     expect(screen.getByRole('img')).toHaveAttribute('src', defaultImageArray[0]);
   });
