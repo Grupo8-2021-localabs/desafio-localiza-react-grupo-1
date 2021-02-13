@@ -2,5 +2,6 @@ export interface IProps {
   car: string,
   brand: string,
   dailyRate: number,
-  imageArray: string[]
+  imageArray: string[],
+  fuelType: 'energy' | 'gasoline' | 'hybrid'
 }

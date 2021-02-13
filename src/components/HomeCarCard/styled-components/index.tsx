@@ -60,3 +60,10 @@ export const Image = styled.img`
     width: 252px;
     height: 119px;
 `;
+
+export const FooterContainer = styled.footer`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+`;
