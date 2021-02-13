@@ -6,13 +6,13 @@ import {
   Image,
 } from './styled-components';
 
-const HomeCarCard: FC<IProps> = ({ car, ...props }: IProps) => (
+const HomeCarCard: FC<IProps> = ({ car, imageArray, ...props }: IProps) => (
   <Container>
     <CardHeader
       car={car}
       {...props}
     />
-    <Image src="https://via.placeholder.com/252x119" alt={car} />
+    <Image src={imageArray[0]} alt={car} />
   </Container>
 );
 

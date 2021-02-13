@@ -4,7 +4,7 @@ import {
   SmallText, LargeText, HeaderContainer, TextContainer,
 } from '../styled-components';
 
-const CardHeader: FC<IProps> = ({
+const CardHeader: FC<Partial<IProps>> = ({
   car,
   brand,
   dailyRate,
