@@ -15,4 +15,6 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
+
+    border-top: solid #EBEBF0 1px;
 `;

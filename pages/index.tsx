@@ -1,5 +1,17 @@
 import Head from 'next/head';
-import { HomeContainer } from './Home.style';
+import CarCard from '../src/components/Home/CarCard/CarCard';
+import createCarCardProps from '../src/components/Home/CarCard/helpers/factory';
+import { Container } from '../src/components/Home/Container';
+import Header from '../src/components/Home/Header/Header';
+import SectionHeader from '../src/components/Home/SectionHeader/SectionHeader';
+import Menu from '../src/components/Menu/Menu';
+
+// @todo: load cars
+const cars = [
+  createCarCardProps(),
+  createCarCardProps(),
+  createCarCardProps(),
+];
 
 export default function Home() {
   return (
@@ -7,7 +19,14 @@ export default function Home() {
       <Head>
         <title>Desafio Localiza</title>
       </Head>
-      <HomeContainer>Teste</HomeContainer>
+      <Container>
+        <Header />
+        <section>
+          <SectionHeader />
+          {cars.map((car) => <CarCard {...car} />)}
+          <Menu />
+        </section>
+      </Container>
     </>
   );
 }
