@@ -7,7 +7,11 @@ export const Container = styled.div`
     color: #FFFFFF;
 
     box-sizing: border-box;
+    padding: 24px 12px;
+
+    @media(min-width: 375px) {
     padding: 24px;
+    }
 
     font-family: 'Archivo', sans-serif;
     text-align: left;
@@ -19,9 +23,10 @@ export const Container = styled.div`
 `;
 
 export const DragDown = styled.p`
-transform: rotate(45deg);
-border: solid #7A7A80;
-border-width: 0 3px 3px 0;
-display: inline-block;
-padding: 3px;
+    transform: rotate(45deg);
+    border: solid #7A7A80;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-top: 18px;
 `;

@@ -2,12 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     background-color: #F4F5F6;
-    width: 343px;
+    width: calc(100% - 16px);
     height: 240px;
 
     box-sizing: border-box;
     padding: 24px;
-    margin: 0 16px;
+    margin: 16px 8px;
+
+    @media(min-width: 375px){
+        width: 343px;
+        margin: 16px;
+    }
 
     font-family: 'Archivo', sans-serif;
     text-align: left;
