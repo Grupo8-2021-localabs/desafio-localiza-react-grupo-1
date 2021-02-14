@@ -1,10 +1,12 @@
 import { InputHTMLAttributes, ReactNode } from 'react';
+import { UseFormMethods } from 'react-hook-form';
 
-export interface IProps extends InputHTMLAttributes<HTMLInputElement> {
+export type IProps = {
   disabled?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   label?: string;
   error?: string;
   placeholder?: string;
-}
+} & InputHTMLAttributes<HTMLInputElement> &
+  Pick<UseFormMethods, 'register'>;
