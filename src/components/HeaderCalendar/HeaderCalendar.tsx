@@ -13,15 +13,15 @@ interface ICustomInput {
   onClick: any;
 }
 
-const HeaderCalendar: FC<IProps> = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+const CalendarCustomInput = ({ value, onClick }: ICustomInput) => (
+  <ContentCustomInput onClick={onClick}>
+    {dateToString(new Date(value.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3')))}
+  </ContentCustomInput>
+);
 
-  const CalendarCustomInput = ({ value, onClick }: ICustomInput) => (
-    <ContentCustomInput onClick={onClick}>
-      {dateToString(new Date(value.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3')))}
-    </ContentCustomInput>
-  );
+const HeaderCalendar: FC<IProps> = () => {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState<Date>(new Date());
 
   return (
     <Container>
@@ -32,7 +32,8 @@ const HeaderCalendar: FC<IProps> = () => {
             selected={startDate}
             dateFormat="dd/MM/yyyy"
             locale="pt-BR"
-            onChange={(date) => setStartDate(date)}
+            onChange={(date: Date) => setStartDate(date)}
+            // @ts-ignore
             customInput={<CalendarCustomInput />}
           />
         </DatePickerStyle>
@@ -44,7 +45,8 @@ const HeaderCalendar: FC<IProps> = () => {
             selected={endDate}
             dateFormat="dd/MM/yyyy"
             locale="pt-BR"
-            onChange={(date) => setEndDate(date)}
+            onChange={(date: Date) => setEndDate(date)}
+            // @ts-ignore
             customInput={<CalendarCustomInput />}
             calendarClassName="react-datepicker-popper"
           />
