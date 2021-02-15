@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-
 import dateToString from '../../../common/helpers/dateToString';
 
 interface IProps {
