@@ -27,11 +27,13 @@ export default function Home() {
         <title>Desafio Localiza</title>
       </Head>
       <Container>
-        <Header />
+        <Header withCalendar />
         <section>
           <SectionHeader />
           <CarListContainer>
-            {cars.map((car) => <CarCard key={car.car} {...car} />)}
+            {cars.map((car) => (
+              <CarCard key={car.car} {...car} />
+            ))}
           </CarListContainer>
           <Menu />
         </section>
