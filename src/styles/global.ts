@@ -72,6 +72,14 @@ export default createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Inter';
+    src: url("/fonts/Inter/Inter-Medium.ttf");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+
   body {
     background: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
