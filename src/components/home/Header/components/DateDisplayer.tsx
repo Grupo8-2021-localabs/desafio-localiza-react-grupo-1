@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import dateToString from '../../../common/helpers/dateToString';
 
 interface IProps {
     label: string,
@@ -19,18 +20,11 @@ const DateText = styled.p`
     margin-bottom: 9px;
 `;
 
-const formatDate = (date): Date => date
-  .toLocaleDateString(
-    'pt-Br',
-    { year: 'numeric', month: 'long', day: 'numeric' },
-  )
-  .replace(/ de/g, '');
-
 const DateDisplayer: FC<Partial<IProps>> = ({ label, date }: IProps) => (
   <div>
     <Label>{label.toUpperCase()}</Label>
     <DateText>
-      {formatDate(date)}
+      {dateToString(date)}
     </DateText>
   </div>
 );
