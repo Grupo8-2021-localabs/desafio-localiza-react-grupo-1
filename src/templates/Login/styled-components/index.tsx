@@ -35,6 +35,7 @@ export const ContentTitle = styled.div`
   @media (min-width: 640px) {
     align-items: center;
     text-align: center;
+    justify-content: center;
   }
 
   h1 {
@@ -52,6 +53,23 @@ export const ContentTitle = styled.div`
     line-height: 25px;
     color: #7a7a80;
     width: 260px;
+  }
+`;
+
+export const SubTitle = styled.div`
+  display: flex;
+  margin-bottom: 24px;
+  @media (min-width: 640px) {
+    justify-content: center;
+    margin-right: 300px;
+  }
+  h2 {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+    color: #3d3d4d;
   }
 `;
 
