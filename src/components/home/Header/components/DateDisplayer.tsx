@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import Calendar from '../../../Calendar/Calendar';
+import dateToString from '../../../common/helpers/dateToString';
 
 interface IProps {
   label: string;
@@ -33,6 +34,7 @@ const DateDisplayer: FC<Partial<IProps>> = ({ label, date }: IProps) => (
     {/* <DateText>{formatDate(date)}</DateText> */}
     <DateText>
       <Calendar />
+      {dateToString(date)}
     </DateText>
   </div>
 );
