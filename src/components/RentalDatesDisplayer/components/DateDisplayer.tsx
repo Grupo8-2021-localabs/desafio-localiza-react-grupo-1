@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import dateToString from '../../../common/helpers/dateToString';
+import dateToString from '../../common/helpers/dateToString';
 
 interface IProps {
     label: string,
@@ -8,7 +8,6 @@ interface IProps {
 }
 
 const Label = styled.p`
-    color: #7A7A80;
     font-size: 0.65em;
     font-family: 'Archivo', sans-serif;
     margin: 0;
@@ -16,6 +15,9 @@ const Label = styled.p`
 `;
 
 const DateText = styled.p`
+    color: #DC1637;
+    font-size: 0.95em;
+    line-height: 1.15em;
     margin: 0;
     margin-bottom: 9px;
 `;

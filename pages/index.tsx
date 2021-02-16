@@ -2,9 +2,9 @@ import Head from 'next/head';
 import CarCard from '../src/components/home/CarCard/CarCard';
 import createCarCardProps from '../src/components/home/CarCard/helpers/factory';
 import { Container, CarListContainer } from '../src/components/home/Container';
-import Header from '../src/components/home/Header/Header';
 import SectionHeader from '../src/components/home/SectionHeader/SectionHeader';
 import Menu from '../src/components/Menu/Menu';
+import HeaderCalendar from '../src/components/HeaderCalendar/HeaderCalendar';
 
 // @todo: load cars
 const cars = [
@@ -27,11 +27,13 @@ export default function Home() {
         <title>Desafio Localiza</title>
       </Head>
       <Container>
-        <Header />
+        <HeaderCalendar />
         <section>
           <SectionHeader />
           <CarListContainer>
-            {cars.map((car) => <CarCard key={car.car} {...car} />)}
+            {cars.map((car) => (
+              <CarCard key={car.car} {...car} />
+            ))}
           </CarListContainer>
           <Menu />
         </section>

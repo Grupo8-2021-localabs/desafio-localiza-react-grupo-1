@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IProps } from './types';
-import CardHeader from './components/CardHeader';
+import BasicCarInfo from '../../BasicCarInfo/BasicCarInfo';
 import CardFooter from './components/CardFooter';
 import {
   Container,
@@ -11,7 +11,7 @@ const CarCard: FC<IProps> = ({
   car, imageArray, fuelType, ...props
 }: IProps) => (
   <Container>
-    <CardHeader
+    <BasicCarInfo
       car={car}
       {...props}
     />

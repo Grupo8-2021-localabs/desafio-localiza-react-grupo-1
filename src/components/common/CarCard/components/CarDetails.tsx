@@ -8,6 +8,7 @@ import {
   CharacteristicsContainer,
 } from '../styled-components';
 import { IconMap } from '../../helpers/renderCarIcon';
+import numberToCurrency from '../../helpers/numberToCurrency';
 
 const CarDetails: FC<Partial<IProps>> = ({
   car,
@@ -15,15 +16,8 @@ const CarDetails: FC<Partial<IProps>> = ({
   dailyRate,
   fuelType,
 }: IProps) => {
-  const localeDailyRate = dailyRate.toLocaleString(
-    'pt-BR',
-    {
-      style: 'currency',
-      currency: 'BRL',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    },
-  );
+  const localeDailyRate = numberToCurrency(dailyRate);
+
   const renderIcon = IconMap.get(fuelType);
   return (
     <CarDetailContainer>
