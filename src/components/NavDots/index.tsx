@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IProps } from '../../types';
+import { IProps } from '../home/CarCard/types';
 import { Dot } from './Dot';
 
 const NavDots: FC<Partial<IProps>> = ({ imageArray }: Partial<IProps>) => (
