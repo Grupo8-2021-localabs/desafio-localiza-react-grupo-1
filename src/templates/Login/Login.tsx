@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 
-import EmailIcon from '../../components/icons/EmailIcon/EmailIcon';
+import CpfIcon from '../../components/icons/CpfIcon/CpfIcon';
 import PasswordIcon from '../../components/icons/PasswordIcon/PasswordIcon';
 import { Container, ContentTitle, TextLinkRegister } from './styled-components/index';
 import { schema } from './Login.validations';
@@ -15,6 +15,7 @@ const Login = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
+
   const onSubmit = (data: SignIn) => console.log(data);
 
   return (
@@ -28,12 +29,13 @@ const Login = () => {
       </ContentTitle>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
-          type="email"
-          name="email"
-          placeholder="Email"
+          type="text"
+          name="cpf"
+          placeholder="CPF"
           register={register}
-          error={errors?.email?.message}
-          iconLeft={<EmailIcon />}
+          maxLength={14}
+          error={errors?.cpf?.message}
+          iconLeft={<CpfIcon />}
           className="input-style"
         />
 
