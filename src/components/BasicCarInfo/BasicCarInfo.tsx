@@ -3,21 +3,14 @@ import { IProps } from './types';
 import {
   SmallText, LargeText, Container, TextContainer,
 } from './styled-components';
+import numberToCurrency from '../common/helpers/numberToCurrency';
 
 const BasicCarInfo: FC<Partial<IProps>> = ({
   car,
   brand,
   dailyRate,
 }: IProps) => {
-  const localeDailyRate = dailyRate.toLocaleString(
-    'pt-BR',
-    {
-      style: 'currency',
-      currency: 'BRL',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    },
-  );
+  const localeDailyRate = numberToCurrency(dailyRate);
   return (
     <Container>
       <TextContainer>
