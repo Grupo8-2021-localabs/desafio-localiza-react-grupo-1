@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { IProps } from '../types';
+import { IProps } from './types';
 import {
-  SmallText, LargeText, HeaderContainer, TextContainer,
-} from '../styled-components';
+  SmallText, LargeText, Container, TextContainer,
+} from './styled-components';
 
-const CardHeader: FC<Partial<IProps>> = ({
+const BasicCarInfo: FC<Partial<IProps>> = ({
   car,
   brand,
   dailyRate,
@@ -19,7 +19,7 @@ const CardHeader: FC<Partial<IProps>> = ({
     },
   );
   return (
-    <HeaderContainer>
+    <Container>
       <TextContainer>
         <SmallText>{brand}</SmallText>
         <LargeText>{car}</LargeText>
@@ -28,8 +28,8 @@ const CardHeader: FC<Partial<IProps>> = ({
         <SmallText>AO DIA</SmallText>
         <LargeText color="#DC1637">{localeDailyRate}</LargeText>
       </TextContainer>
-    </HeaderContainer>
+    </Container>
   );
 };
 
-export default CardHeader;
+export default BasicCarInfo;
