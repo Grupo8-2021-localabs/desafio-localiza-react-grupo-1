@@ -1,15 +1,18 @@
 import { useForm } from 'react-hook-form';
 import { InferType } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useHistory } from "react-router-dom";
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 
-import EmailIcon from '../../components/icons/EmailIcon/EmailIcon';
+import CpfIcon from '../../components/icons/CpfIcon/CpfIcon';
 import PasswordIcon from '../../components/icons/PasswordIcon/PasswordIcon';
-import HomeIcon from '../../components/icons/HomeIcon'
-import { Container, ContentTitle, TextLinkRegister, SubTitle } from '../Login/styled-components/index';
+import PersonIcon from '../../components/icons/PersonIcon/index'
+import GoBackIcon from '../../components/icons/GoBackIcon/index'
+import { Container, ContentTitle, SubTitle } from '../Login/styled-components/index';
 import { schema } from '../Login/Login.validations';
 import { useState } from 'react';
+import {RegisterContainer, GoBack,ContainerCircle, Circle} from './Register.styled'
 
 type SignIn = InferType<typeof schema>;
 
@@ -20,9 +23,20 @@ const Register = () => {
   const onSubmit = (data: SignIn) => console.log(data);
 
   const [isSecondPart, setisSecondPart] = useState(false);
+  const history = useHistory();
+  const goBack = () => history.goBack();
 
   return (
     <Container>
+      <RegisterContainer>
+      <GoBack onClick={goBack}>
+      <GoBackIcon color={'#7A7A80'}/>
+      </GoBack>
+      <ContainerCircle>
+      <Circle />
+      <Circle /> 
+      </ContainerCircle>
+      </RegisterContainer>
       <ContentTitle>
         <h1>
           Crie sua
@@ -30,7 +44,6 @@ const Register = () => {
         </h1>
         <p>Faça seu cadastro de forma rápida e fácil.</p>
       </ContentTitle>
-
       {!isSecondPart ? 
     <>
       <SubTitle>
@@ -40,26 +53,26 @@ const Register = () => {
       </SubTitle>
       <form onSubmit={handleSubmit(onSubmit)}>
       <Input
-          type="name"
+          type="text"
           name="name"
           placeholder="Nome"
           register={register}
-          iconLeft={<HomeIcon color={'#7A7A80'}/>}
+          iconLeft={<PersonIcon color={'#7A7A80'}/>}
           className="input-style"
         />
 
         <Input
-          type="email"
-          name="email"
-          placeholder="Email"
+          type="cpf"
+          name="cpf"
+          placeholder="CPF"
           register={register}
-          error={errors?.email?.message}
-          iconLeft={<EmailIcon />}
+          error={errors?.cpf?.message}
+          iconLeft={<CpfIcon />}
           className="input-style"
         />    
 
         <div className="button-container">
-          <Button className="button-style" onClick = { () => setisSecondPart(true)}>
+          <Button className="button-style" onClick = { () => setisSecondPart(true)} type={'submit'}>
             Próximo 
           </Button>
         </div>
@@ -93,14 +106,22 @@ const Register = () => {
         />
 
       <div className="button-container">
-        <Button className="button-style" type="submit">
+        <Button className="button-style" type="submit" 
+           onClick={() => {
+              console.log("Cadastro Criado com sucesso");
+              setTimeout(() => {
+                history.push("/");
+              }, 2000);
+            }}>
           Cadastrar 
         </Button>
       </div>
     </form>
   </>
     }
+    
     </Container>
+    
   );
 };
 export default Register;
