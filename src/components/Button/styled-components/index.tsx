@@ -42,6 +42,10 @@ export const ButtonTag = styled.button<IButtonTag>`
     justify-content: space-between;
     gap: 16px;
     font-size: 15px;
+    & span {
+      text-align: center;
+      width: 100%;
+    }
   }
 
   .loading-icon {
