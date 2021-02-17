@@ -49,7 +49,7 @@ const Login = () => {
           className="input-style"
         />
         <TextLinkRegister>
-          <a href="/register">
+          <a href="/cadastro">
             Ainda não sou cliente
           </a>
         </TextLinkRegister>

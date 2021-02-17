@@ -29,3 +29,4 @@ export const Circle = styled.div`
   background-color: ${(props) => (props ? "#47474D" : "#AEAEB3")};
   transform: rotate(180deg);
 `;
+

@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { InferType } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useHistory } from "react-router-dom";
+import { useRouter } from 'next/router'
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 
@@ -14,17 +14,17 @@ import { schema } from '../Login/Login.validations';
 import { useState } from 'react';
 import {RegisterContainer, GoBack,ContainerCircle, Circle} from './Register.styled'
 
-type SignIn = InferType<typeof schema>;
+type SignUp = InferType<typeof schema>;
 
 const Register = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: SignIn) => console.log(data);
+  const onSubmit = (data: SignUp) => console.log(data);
 
   const [isSecondPart, setisSecondPart] = useState(false);
-  const history = useHistory();
-  const goBack = () => history.goBack();
+  const router = useRouter();
+  const goBack = () => router.back();
 
   return (
     <Container>
@@ -110,7 +110,7 @@ const Register = () => {
            onClick={() => {
               console.log("Cadastro Criado com sucesso");
               setTimeout(() => {
-                history.push("/");
+                router.push("/");
               }, 2000);
             }}>
           Cadastrar 
