@@ -18,10 +18,11 @@ const Input: FC<IProps> = ({
   error,
   placeholder,
   name,
+  className,
   register,
   ...rest
 }) => (
-  <InputContainer>
+  <InputContainer className={className}>
     <label htmlFor={label}>{label}</label>
     <Content>
       <IconContentLeft>{iconLeft && <span className="icon-left">{iconLeft}</span>}</IconContentLeft>

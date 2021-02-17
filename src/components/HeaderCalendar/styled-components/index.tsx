@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: #1b1b1f;
   width: 100%;
-  height: 89px;
+  height: 112px;
   color: #ffffff;
 
   box-sizing: border-box;
@@ -12,7 +12,9 @@ export const Container = styled.div`
   @media (min-width: 375px) {
     padding: 24px;
   }
-
+  @media (min-width: 640px) {
+    height: 89px;
+  }
   font-family: 'Archivo', sans-serif;
   text-align: left;
 

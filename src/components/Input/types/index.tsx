@@ -8,5 +8,6 @@ export type IProps = {
   label?: string;
   error?: string;
   placeholder?: string;
+  isSearch?: boolean;
 } & InputHTMLAttributes<HTMLInputElement> &
   Pick<UseFormMethods, 'register'>;
