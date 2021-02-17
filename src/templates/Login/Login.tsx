@@ -61,7 +61,7 @@ const Login: FC<Record<string, unknown>> = () => {
           className="input-style"
         />
         <TextLinkRegister>
-          <a href="https://www.localiza.com/brasil/pt-br/cadastro/dados-pessoais">
+          <a href="/cadastro">
             Ainda não sou cliente
           </a>
         </TextLinkRegister>
