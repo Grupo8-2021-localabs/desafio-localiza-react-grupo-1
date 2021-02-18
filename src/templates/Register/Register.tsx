@@ -10,9 +10,16 @@ import CpfIcon from '../../components/icons/CpfIcon/CpfIcon';
 import PasswordIcon from '../../components/icons/PasswordIcon/PasswordIcon';
 import PersonIcon from '../../components/icons/PersonIcon/index';
 import GoBackIcon from '../../components/icons/GoBackIcon/index';
-import { Container, ContentTitle, SubTitle } from '../Login/styled-components/index';
+import { SubTitle } from '../Login/styled-components/index';
 import { schema } from '../Login/Login.validations';
-import { RegisterContainer, GoBack, ContainerCircle, Circle } from './Register.styled';
+import {
+  Container,
+  ContentTitle,
+  RegisterContainer,
+  GoBack,
+  ContainerCircle,
+  Circle,
+} from './Register.styled';
 
 type SignUp = InferType<typeof schema>;
 
@@ -108,8 +115,8 @@ const Register = () => {
                 onClick={() => {
                   console.log('Cadastro Criado com sucesso');
                   setTimeout(() => {
-                    router.push('/');
-                  }, 2000);
+                    router.push('/confirmacao-cadastro');
+                  }, 1000);
                 }}
               >
                 Cadastrar

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import CarCard from '../../components/common/CarCard/CarCard';
-import createCarCardProps from '../../components/home/CarCard/helpers/factory';
+import createCarCardProps from '../../components/common/CarCard/helpers/factory';
 import { Container, CarListContainer } from '../../components/home/Container';
 import Menu from '../../components/Menu/Menu';
 import Header from '../../components/common/Header/Header';

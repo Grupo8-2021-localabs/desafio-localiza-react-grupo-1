@@ -5,7 +5,7 @@ interface IButtonTag {
   background: string;
   color: string;
   isLoading: boolean;
-  border: string;
+  border?: string;
   width: string;
 }
 

@@ -4,6 +4,6 @@ export interface IProps {
   dailyRate: number;
   imageArray: string[];
   fuelType: 'energy' | 'gasoline' | 'hybrid';
-  isCurrent: boolean;
-  isHistory: boolean;
+  isCurrent?: boolean;
+  isHistory?: boolean;
 }
