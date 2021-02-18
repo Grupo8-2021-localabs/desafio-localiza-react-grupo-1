@@ -85,6 +85,7 @@ export const Circle = styled.div`
   width: 4px;
   height: 4px;
   margin-right: 8px;
+  border-radius: 10px;
   background-color: ${(props) => (props ? "#47474D" : "#AEAEB3")};
   transform: rotate(180deg);
 `;
