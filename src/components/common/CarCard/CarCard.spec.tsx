@@ -5,7 +5,7 @@ import {
   defaultImageArray,
   defaultDailyRate,
   defaultBrand,
-  defaultCar,
+  defaultModel,
   createCarCardProps,
 } from './helpers/factory';
 
@@ -14,7 +14,7 @@ describe('<HomeCarCard>', () => {
     render(<CarCard
       {...createCarCardProps()}
     />);
-    screen.getByText(defaultCar);
+    screen.getByText(defaultModel);
   });
   it('deve renderizar o nome da marca', () => {
     render(<CarCard

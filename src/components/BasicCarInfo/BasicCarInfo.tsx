@@ -6,7 +6,7 @@ import {
 import numberToCurrency from '../common/helpers/numberToCurrency';
 
 const BasicCarInfo: FC<Partial<IProps>> = ({
-  car,
+  model,
   brand,
   dailyRate,
 }: IProps) => {
@@ -15,7 +15,7 @@ const BasicCarInfo: FC<Partial<IProps>> = ({
     <Container>
       <TextContainer>
         <SmallText>{brand}</SmallText>
-        <LargeText>{car}</LargeText>
+        <LargeText>{model}</LargeText>
       </TextContainer>
       <TextContainer>
         <SmallText>AO DIA</SmallText>
