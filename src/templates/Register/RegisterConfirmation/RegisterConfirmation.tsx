@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import * as S from "./RegisterConfirmation.styled";
 import Check from '../../../components/icons/RegisterConfirmation/Check'
+import Union from '../../../components/icons/RegisterConfirmation/Union'
 
 const RegisterConfirmation = () => {
 
@@ -8,11 +9,7 @@ const RegisterConfirmation = () => {
 
   return (
     <S.RegisterConfirmationContainer>
-      {/* <S.VectorsContainer>
-        <S.Vector1 />
-        <S.Vector2 />
-        <S.Vector3 />
-      </S.VectorsContainer> */}
+         <Union />
       <S.CheckBox>
         <Check />
       </S.CheckBox>
