@@ -1,6 +1,6 @@
 import { IProps } from '../types';
 
-export const defaultCar = 'huracan';
+export const defaultModel = 'huracan';
 export const defaultBrand = 'lamborghini';
 export const defaultDailyRate = 520;
 export const defaultImageArray = [
@@ -10,7 +10,7 @@ export const defaultImageArray = [
 export const defaultFuelType = 'energy';
 
 export const createCarCardProps = (customizedProps? : Partial<IProps>) : IProps => ({
-  car: defaultCar,
+  model: defaultModel,
   brand: defaultBrand,
   dailyRate: defaultDailyRate,
   imageArray: defaultImageArray,
