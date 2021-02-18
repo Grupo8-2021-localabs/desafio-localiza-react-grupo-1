@@ -1,8 +1,8 @@
-import { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { InferType } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 
@@ -11,15 +11,14 @@ import PasswordIcon from '../../components/icons/PasswordIcon/PasswordIcon';
 import PersonIcon from '../../components/icons/PersonIcon/index';
 import GoBackIcon from '../../components/icons/GoBackIcon/index';
 import { Container, ContentTitle, SubTitle } from '../Login/styled-components/index';
-import { defaultValues, schema } from './Register.validations';
+import { schema } from '../Login/Login.validations';
 import { RegisterContainer, GoBack, ContainerCircle, Circle } from './Register.styled';
 
 type SignUp = InferType<typeof schema>;
 
-const Register: FC = () => {
+const Register = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
-    defaultValues,
   });
   const onSubmit = (data: SignUp) => console.log(data);
 
@@ -65,7 +64,6 @@ const Register: FC = () => {
               name="cpf"
               placeholder="CPF"
               register={register}
-              maxLength={11}
               error={errors?.cpf?.message}
               iconLeft={<CpfIcon />}
               className="input-style"
@@ -95,10 +93,10 @@ const Register: FC = () => {
             />
             <Input
               type="password"
-              name="passwordConfirmation"
+              name="password"
               placeholder="Senha"
               register={register}
-              error={errors?.passwordConfirmation?.message}
+              error={errors?.password?.message}
               iconLeft={<PasswordIcon />}
               className="input-style"
             />
