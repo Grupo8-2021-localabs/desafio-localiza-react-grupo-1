@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 80px 24px 100px 24px;
-
+  margin: 80px 24px 0px 24px;
+  
   @media (min-width: 640px) {
     form {
       align-self: center;
@@ -31,6 +31,10 @@ export const ContentTitle = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 110px;
+
+  @media (max-width: 1024px) {
+    margin-top: 80px;
+  }
 
   @media (min-width: 640px) {
     align-items: center;
