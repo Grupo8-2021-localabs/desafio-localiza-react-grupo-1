@@ -6,7 +6,7 @@ import RentCurrent from '../../RentCurrent/RentCurrent';
 import RentHistory from '../../RentHistory/RentHistory';
 
 const CarCard: FC<IProps> = ({
-  car,
+  model,
   imageArray,
   fuelType,
   isCurrent = false,
@@ -15,8 +15,8 @@ const CarCard: FC<IProps> = ({
 }: IProps) => (
   <section>
     <Container>
-      <CarDetails car={car} fuelType={fuelType} {...props} />
-      <Image src={imageArray[0]} alt={car} />
+      <CarDetails model={model} fuelType={fuelType} {...props} />
+      <Image src={imageArray[0]} alt={model} />
     </Container>
     {isCurrent && <RentCurrent endDate="20 fevereiro 2021" />}
     {isHistory && <RentHistory startDate="17 fevereiro 2021" endDate="18 fevereiro 2021" />}

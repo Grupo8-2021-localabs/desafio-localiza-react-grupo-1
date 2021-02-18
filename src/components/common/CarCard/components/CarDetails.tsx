@@ -11,7 +11,7 @@ import { IconMap } from '../../helpers/renderCarIcon';
 import numberToCurrency from '../../helpers/numberToCurrency';
 
 const CarDetails: FC<Partial<IProps>> = ({
-  car,
+  model,
   brand,
   dailyRate,
   fuelType,
@@ -23,7 +23,7 @@ const CarDetails: FC<Partial<IProps>> = ({
     <CarDetailContainer>
       <TextContainer>
         <SmallText>{brand}</SmallText>
-        <LargeText>{car}</LargeText>
+        <LargeText>{model}</LargeText>
       </TextContainer>
       <CharacteristicsContainer>
         <TextContainer>

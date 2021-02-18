@@ -1,6 +1,6 @@
 import { IProps } from '../types';
 
-export const defaultCar = 'huracan';
+export const defaultModel = 'huracan';
 export const defaultBrand = 'lamborghini';
 export const defaultDailyRate = 520;
 export const defaultImageArray = [
@@ -11,19 +11,15 @@ export const defaultFuelType = 'energy';
 export const defaultCurrent = false;
 export const defaultHistory = false;
 
-export const createCarCardProps = (customizedProps?: Partial<IProps>): IProps => {
-  debugger;
-  console.log(customizedProps);
+export const createCarCardProps = (customizedProps?: Partial<IProps>): IProps => ({
+  model: defaultModel,
+  brand: defaultBrand,
+  dailyRate: defaultDailyRate,
+  imageArray: defaultImageArray,
+  fuelType: defaultFuelType,
+  isCurrent: defaultCurrent,
+  isHistory: defaultHistory,
+  ...customizedProps,
+});
 
-  return {
-    car: defaultCar,
-    brand: defaultBrand,
-    dailyRate: defaultDailyRate,
-    imageArray: defaultImageArray,
-    fuelType: defaultFuelType,
-    isCurrent: defaultCurrent,
-    isHistory: defaultHistory,
-    ...customizedProps,
-  };
-};
 export default createCarCardProps;

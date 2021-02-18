@@ -1,5 +1,5 @@
 export interface IProps {
-  car: string,
+  model: string,
   brand: string,
   dailyRate: number,
 }
