@@ -20,11 +20,13 @@ export interface ApiAvailableCar {
   images?: string[]
 }
 
+export type FuelType = 'energy' | 'hybrid' | 'gasoline';
+
 export interface AppAvailableCar {
     id: number,
     model: string,
     brand: string,
     dailyRate: number,
     imageArray: string[],
-    fuelType: 'energy' | 'hybrid' | 'gasoline',
+    fuelType: FuelType,
 }
