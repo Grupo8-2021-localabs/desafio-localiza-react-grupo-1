@@ -7,7 +7,7 @@ export default {
   title: 'Components/BasicCarInfo',
   component: BasicCarInfo,
   argTypes: {
-    car: { control: 'text' },
+    model: { control: 'text' },
     brand: { control: 'text' },
     dailyRate: {
       control: {
