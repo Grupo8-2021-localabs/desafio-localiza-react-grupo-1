@@ -1,5 +1,5 @@
 export interface IProps {
-  car?: string;
+  id: number;
   brand: string;
   dailyRate: number;
   imageArray: string[];

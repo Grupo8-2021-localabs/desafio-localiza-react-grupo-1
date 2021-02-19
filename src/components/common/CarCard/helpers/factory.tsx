@@ -11,15 +11,20 @@ export const defaultFuelType = 'energy';
 export const defaultCurrent = false;
 export const defaultHistory = false;
 
-export const createCarCardProps = (customizedProps?: Partial<IProps>): IProps => ({
-  model: defaultModel,
-  brand: defaultBrand,
-  dailyRate: defaultDailyRate,
-  imageArray: defaultImageArray,
-  fuelType: defaultFuelType,
-  isCurrent: defaultCurrent,
-  isHistory: defaultHistory,
-  ...customizedProps,
-});
+let id = 0;
 
+export const createCarCardProps = (customizedProps?: Partial<IProps>): IProps => {
+  id += 1;
+  return {
+    id,
+    model: defaultModel,
+    brand: defaultBrand,
+    dailyRate: defaultDailyRate,
+    imageArray: defaultImageArray,
+    fuelType: defaultFuelType,
+    isCurrent: defaultCurrent,
+    isHistory: defaultHistory,
+    ...customizedProps,
+  };
+};
 export default createCarCardProps;
