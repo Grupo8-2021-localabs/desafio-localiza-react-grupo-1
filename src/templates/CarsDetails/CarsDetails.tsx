@@ -86,8 +86,8 @@ const CarsDetails = () => {
            <h3>R$  2,900</h3>
          </S.PriceContainer>
          <S.ButtonAlugar onClick={() => {
-              console.log("Carro Alugadocom sucesso");
-              router.push("/");
+              console.log("Carro Alugado com sucesso");
+              router.push("/confirmacao-aluguel");
             }}>Alugar agora</S.ButtonAlugar>
        </S.PriceSection>
        </S.BigPriceContainer>

@@ -28,7 +28,6 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 188px;
   margin-bottom: 80px;
   h1 {
     font-family: 'Archivo';
