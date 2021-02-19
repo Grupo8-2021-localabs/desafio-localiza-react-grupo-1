@@ -8,14 +8,14 @@ import {
 } from './styled-components';
 
 const CarCard: FC<IProps> = ({
-  car, imageArray, fuelType, ...props
+  model, imageArray, fuelType, ...props
 }: IProps) => (
   <Container>
     <BasicCarInfo
-      car={car}
+      model={model}
       {...props}
     />
-    <Image src={imageArray[0]} alt={car} />
+    <Image src={imageArray?.[0]} alt={model} />
     <CardFooter fuelType={fuelType} imageArray={imageArray} />
   </Container>
 );

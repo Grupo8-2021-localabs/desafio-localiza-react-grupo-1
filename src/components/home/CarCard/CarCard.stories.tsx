@@ -7,7 +7,7 @@ export default {
   title: 'Components/Home/CarCard',
   component: CarCard,
   argTypes: {
-    car: { control: 'text' },
+    model: { control: 'text' },
     brand: { control: 'text' },
     dailyRate: {
       control: {

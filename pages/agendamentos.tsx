@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import ListCars from '../src/templates/ListCars/ListCars';
+import SchedulingCars from '../src/templates/SchedulingCars/SchedulingCars';
 
 export default function Index(): React.ReactNode {
   return (
     <>
       <Head>
-        <title>Login</title>
+        <title>Agendamentos</title>
       </Head>
-      <ListCars />
+      <SchedulingCars />
     </>
   );
 }
