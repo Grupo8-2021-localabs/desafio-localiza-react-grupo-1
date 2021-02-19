@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { IProps } from './types';
 import CarDetails from './components/CarDetails';
 import { Container, Image } from './styled-components';
+
 import RentCurrent from '../../RentCurrent/RentCurrent';
 import RentHistory from '../../RentHistory/RentHistory';
 
