@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { InferType } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,7 +29,7 @@ const Register: FC = () => {
   const onSubmit = (data: SignUp) => console.log(data);
 
   const router = useRouter();
-  const goBack = () => router.back();
+  const goBack = () => router.push('/login');
 
   return (
     <Container>
@@ -45,7 +45,9 @@ const Register: FC = () => {
       <ContentTitle>
         <h1>
           Crie sua
-          <br /> conta
+          <br />
+          {' '}
+          conta
         </h1>
         <p>Faça seu cadastro de forma rápida e fácil.</p>
       </ContentTitle>

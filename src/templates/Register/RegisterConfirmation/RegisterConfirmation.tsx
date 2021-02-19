@@ -20,7 +20,7 @@ const RegisterConfirmation = () => {
         onClick={() => {
           console.log('Cadastro Confirmado com sucesso');
           setTimeout(() => {
-            router.push('/login');
+            router.push('/');
           }, 2000);
         }}
       >
