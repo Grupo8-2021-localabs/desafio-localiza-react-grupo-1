@@ -1,15 +1,14 @@
-import { useRouter } from 'next/router'
-import * as S from "./RegisterConfirmation.styled";
-import Check from '../../../components/icons/RegisterConfirmation/Check'
-import Union from '../../../components/icons/RegisterConfirmation/Union'
+import { useRouter } from 'next/router';
+import * as S from './RegisterConfirmation.styled';
+import Check from '../../../components/icons/RegisterConfirmation/Check';
+import Union from '../../../components/icons/RegisterConfirmation/Union';
 
 const RegisterConfirmation = () => {
-
   const router = useRouter();
 
   return (
     <S.RegisterConfirmationContainer>
-         <Union />
+      <Union />
       <S.CheckBox>
         <Check />
       </S.CheckBox>
@@ -17,13 +16,16 @@ const RegisterConfirmation = () => {
         <h1>Conta criada!</h1>
         <p>Agora é só fazer login e aproveitar.</p>
       </S.TextContainer>
-      <S.OkButton 
+      <S.OkButton
         onClick={() => {
-          console.log("Cadastro Confirmado com sucesso");
+          console.log('Cadastro Confirmado com sucesso');
           setTimeout(() => {
-          router.push("/");
+            router.push('/login');
           }, 2000);
-        }}>Ok</S.OkButton>
+        }}
+      >
+        Ok
+      </S.OkButton>
     </S.RegisterConfirmationContainer>
   );
 };

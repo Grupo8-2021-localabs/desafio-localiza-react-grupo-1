@@ -65,6 +65,7 @@ const Register: FC = () => {
             name="cpf"
             placeholder="CPF"
             register={register}
+            maxLength={11}
             error={errors?.cpf?.message}
             iconLeft={<CpfIcon />}
             className="input-style"

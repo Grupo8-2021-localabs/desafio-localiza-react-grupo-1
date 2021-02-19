@@ -33,9 +33,7 @@ const Login: FC<Record<string, unknown>> = () => {
       <ContentTitle>
         <h1>
           Seja
-          <br />
-          {' '}
-          Bem-vindo
+          <br /> Bem-vindo
         </h1>
         <p>Faça seu login para começar uma experiência incrível.</p>
       </ContentTitle>
@@ -45,7 +43,7 @@ const Login: FC<Record<string, unknown>> = () => {
           name="cpf"
           placeholder="CPF"
           register={register}
-          maxLength={14}
+          maxLength={11}
           error={errors?.cpf?.message}
           iconLeft={<CpfIcon />}
           className="input-style"
@@ -61,9 +59,7 @@ const Login: FC<Record<string, unknown>> = () => {
           className="input-style"
         />
         <TextLinkRegister>
-          <a href="/cadastro">
-            Ainda não sou cliente
-          </a>
+          <a href="/cadastro">Ainda não sou cliente</a>
         </TextLinkRegister>
 
         <div className="button-container">
