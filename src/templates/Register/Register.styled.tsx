@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 30px 24px 0px 24px; 
+  margin: 30px 24px 0px 24px;
   @media (min-width: 640px) {
     form {
       align-self: center;
@@ -15,6 +15,7 @@ export const Container = styled.div`
 
   .button-container {
     margin-top: 70px;
+    margin-bottom: 70px;
     display: flex;
     justify-content: center;
   }
@@ -80,7 +81,6 @@ export const ContainerCircle = styled.div`
   justify-content: flex-end;
 `;
 
-
 export const Circle = styled.div`
   width: 4px;
   height: 4px;
@@ -89,4 +89,3 @@ export const Circle = styled.div`
   background-color: ${(props) => (props ? "#47474D" : "#AEAEB3")};
   transform: rotate(180deg);
 `;
-
