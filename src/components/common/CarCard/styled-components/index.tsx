@@ -78,3 +78,7 @@ export const CharacteristicsContainer = styled.div`
     padding-right: 20px;
   }
 `;
+
+export const RentContent = styled.div`
+  margin-top: -13px;
+`;
