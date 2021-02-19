@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import {
   User,
   AppAvailableCar,
+  UserRegistration
 } from './types';
 import { apiCarToAppCar } from './types/adapters';
 
@@ -14,5 +15,7 @@ export const login = (cpf: string, password: string): Promise<AxiosResponse<User
 
 export const loadCarList = (): Promise<AppAvailableCar[]> => api
   .get('/cars/availableCars').then((data) => data.data.map(apiCarToAppCar));
+
+export const registerUser = (user: UserRegistration): Promise<AxiosResponse> => api.post('/clients', user);
 
 export default api;

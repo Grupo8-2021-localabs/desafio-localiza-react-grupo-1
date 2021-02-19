@@ -1,9 +1,12 @@
+import { UserRegistration } from "../../../services/types";
+
 export interface IAuthState {
     token: string,
     userId: number,
 }
 
-export interface IAutoContext {
+export interface IAuthContext {
     authState: IAuthState,
-    signIn(userId: string, token: string): Promise<string|null>,
+    signIn(cpf: string, password: string): Promise<string|null>,
+    signUpAndSignIn(user: Partial<UserRegistration>): Promise<string|null>,
 }

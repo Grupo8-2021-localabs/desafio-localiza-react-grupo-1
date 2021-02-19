@@ -1,8 +1,8 @@
 import {
   createContext, FC, useContext, useEffect, useState,
 } from 'react';
-import { IAutoContext, IAuthState } from './types';
-import { login } from '../../services/api';
+import { IAuthContext, IAuthState } from './types';
+import { login, registerUser } from '../../services/api';
 
 const userPath = '@localiza-academy:userId';
 const tokenPath = '@localiza-academy:token';
@@ -11,7 +11,7 @@ const initialAuthState: IAuthState = {
   userId: undefined,
 };
 
-const AuthContext = createContext<IAutoContext | null>(null);
+const AuthContext = createContext<IAuthContext | null>(null);
 
 const getLocallyStoredCredentials = () => {
   const storedUser = Number(localStorage.getItem(userPath));
@@ -60,9 +60,35 @@ const AuthProvider: FC = ({ children }) => {
     }
   };
 
+  const signUpAndSignIn = async (data) => {
+    const now = new Date();
+    const mockedPartialPayload = {
+      birthay: now.toISOString(),
+      cep: 'cep',
+      logradouro: 'rua',
+      number: 100,
+      city: 'Belo Horizonte',
+      complement: 'complemento',
+      state: "MG"
+    }
+    const payload = {
+      name: data.name,
+      password: data.password,
+      cpf: data.cpf,
+      ...mockedPartialPayload,
+    };
+    try {
+      await registerUser(payload);
+      await signIn(payload.cpf, payload.password);
+      return null;
+    } catch (e) {
+      return e.message;
+    }
+  };
+
   return (
     <AuthContext.Provider value={{
-      authState, signIn,
+      authState, signIn, signUpAndSignIn
     }}
     >
       {children}
@@ -70,6 +96,6 @@ const AuthProvider: FC = ({ children }) => {
   );
 };
 
-const useAuth = (): IAutoContext => useContext(AuthContext);
+const useAuth = (): IAuthContext => useContext(AuthContext);
 
 export { AuthProvider as default, useAuth };

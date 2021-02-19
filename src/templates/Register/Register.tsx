@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { InferType } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,16 +19,27 @@ import {
   ContainerCircle,
   Circle,
 } from './Register.styled';
+import { useAuth } from '../../components/AuthProvider';
 
 type SignUp = InferType<typeof schema>;
 
 const Register: FC = () => {
+  const [pageError, setPageError] = useState('');
+  const router = useRouter();
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: SignUp) => console.log(data);
+  const { signUpAndSignIn } = useAuth();
+  const onSubmit = async (data: SignUp) => {
+    const error = await signUpAndSignIn(data);
+    if (error) {
+      setPageError(error);
+      setTimeout(() => setPageError(''), 5000);
+    }else{
+      router.push('/confirmacao-cadastro');
+    }
+  };
 
-  const router = useRouter();
   const goBack = () => router.push('/login');
 
   return (
@@ -87,7 +98,7 @@ const Register: FC = () => {
             name="passwordConfirmation"
             placeholder="Repetir senha"
             register={register}
-            error={errors?.passwordConfirmation?.message}
+            error={errors?.passwordConfirmation?.message || pageError}
             iconLeft={<PasswordIcon />}
             className="input-style"
           />
@@ -96,12 +107,6 @@ const Register: FC = () => {
             <Button
               className="button-style"
               type="submit"
-              onClick={() => {
-                console.log('Cadastro Criado com sucesso');
-                setTimeout(() => {
-                  router.push('/confirmacao-cadastro');
-                }, 1000);
-              }}
             >
               Cadastrar
             </Button>
