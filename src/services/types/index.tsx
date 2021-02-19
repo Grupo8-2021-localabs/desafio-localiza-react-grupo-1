@@ -6,6 +6,19 @@ export interface User {
     token: string,
 }
 
+export interface UserRegistration {
+  name: string,
+  cpf: string,
+  password: string,
+  birthay: string,
+  cep: string,
+  logradouro: string,
+  number: number,
+  city: string,
+  complement: string,
+  state: string
+}
+
 export interface ApiAvailableCar {
   id: number,
   board: string,
