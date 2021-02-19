@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 30px 24px 0px 24px; 
+  margin: 30px 24px 0px 24px;
   @media (min-width: 640px) {
     form {
       align-self: center;

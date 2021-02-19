@@ -9,7 +9,7 @@ const RegisterConfirmation = () => {
 
   return (
     <S.RegisterConfirmationContainer>
-         <Union />
+      <Union />
       <S.CheckBox>
         <Check />
       </S.CheckBox>
@@ -18,13 +18,16 @@ const RegisterConfirmation = () => {
         <p>Agora é só fazer login</p>
         <p>e aproveitar.</p>
       </S.TextContainer>
-      <S.OkButton 
+      <S.OkButton
         onClick={() => {
           console.log("Cadastro Confirmado com sucesso");
           setTimeout(() => {
           router.push("/");
           }, 2000);
-        }}>Ok</S.OkButton>
+        }}
+      >
+        Ok
+      </S.OkButton>
     </S.RegisterConfirmationContainer>
   );
 };

@@ -1,13 +1,13 @@
 import Head from 'next/head';
-import ConfirmationAluguel from '../src/templates/Confirmation/ConfirmationAluguel';
+import ConfirmationRent from '../src/templates/Confirmation/ConfirmationRent';
 
-export default function Index() {
+export default function Index() : React.ReactElement {
   return (
     <>
       <Head>
-        <title>Confirmacao Aluguel</title>
+        <title>Confirmação Aluguel</title>
       </Head>
-      <ConfirmationAluguel />
+      <ConfirmationRent />
     </>
   );
 }

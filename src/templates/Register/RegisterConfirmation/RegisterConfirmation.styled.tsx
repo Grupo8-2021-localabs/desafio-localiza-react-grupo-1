@@ -7,6 +7,8 @@ export const RegisterConfirmationContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
+  padding: 16px;
 `;
 
 export const CheckBox = styled.div`
