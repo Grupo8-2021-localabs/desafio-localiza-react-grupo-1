@@ -7,6 +7,8 @@ export const RegisterConfirmationContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
+  padding: 16px;
 `;
 
 export const CheckBox = styled.div`
@@ -28,7 +30,6 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 188px;
   margin-bottom: 80px;
   h1 {
     font-family: 'Archivo';

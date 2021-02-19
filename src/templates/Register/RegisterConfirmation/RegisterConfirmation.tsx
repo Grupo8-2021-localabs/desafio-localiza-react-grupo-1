@@ -14,7 +14,8 @@ const RegisterConfirmation = () => {
       </S.CheckBox>
       <S.TextContainer>
         <h1>Conta criada!</h1>
-        <p>Agora é só fazer login e aproveitar.</p>
+        <p>Agora é só fazer login</p>
+        <p>e aproveitar.</p>
       </S.TextContainer>
       <S.OkButton
         onClick={() => {

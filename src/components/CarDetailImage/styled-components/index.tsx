@@ -12,7 +12,7 @@ export const Image = styled.img`
     margin-top: 50px;
     max-width: 450px;
     max-height: 450px;
-    
+
     @media(max-width: 768px){
     width: 280px;
     height: 132px;
@@ -113,7 +113,7 @@ export const CarPrice = styled.div`
     @media(min-width: 860px){
     margin-left: 285px;
     }
-    
+
 
     h1 {
     font-style: normal;
@@ -225,7 +225,7 @@ export const PriceSection = styled.div`
     @media(max-width: 860px){
     margin-left: 0px;
     }
-    
+
 `;
 
 export const PriceContainer = styled.div`
@@ -267,7 +267,7 @@ export const Text = styled.div`
   }
 `
 
-export const ButtonAlugar = styled.button`
+export const ButtonRent = styled.button`
 
   width: 327px;
   height: 56px;
