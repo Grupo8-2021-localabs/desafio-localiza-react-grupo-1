@@ -39,7 +39,7 @@ const ListCars: FC = () => (
         </SearchContainer>
         <CarListContainer>
           {cars.map((car) => (
-            <CarCard key={car.car} {...car} />
+            <CarCard key={car.car} {...car}/>
           ))}
         </CarListContainer>
         <Menu />
