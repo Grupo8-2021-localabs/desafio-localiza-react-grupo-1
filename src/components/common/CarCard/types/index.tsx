@@ -1,7 +1,10 @@
 export interface IProps {
-  model: string,
-  brand: string,
-  dailyRate: number,
-  imageArray: string[],
-  fuelType: 'energy' | 'gasoline' | 'hybrid'
+  id: number;
+  brand: string;
+  dailyRate: number;
+  imageArray: string[];
+  fuelType: 'energy' | 'gasoline' | 'hybrid';
+  isCurrent?: boolean;
+  isHistory?: boolean;
+  model: string;
 }
