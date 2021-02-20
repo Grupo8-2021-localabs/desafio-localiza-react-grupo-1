@@ -103,7 +103,7 @@ export const Calendar = styled.div`
 
   .DayPicker {
     margin-top: 50px;
-    width: 485px;
+    width: auto;
   }
 
   .DayPicker-Caption {
