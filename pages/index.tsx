@@ -29,7 +29,7 @@ export default function Home({ cars }: IProps): React.ReactNode {
   return (
     <>
       <Head>
-        <title>Escolha a Data</title>
+        <title>Resultados</title>
       </Head>
       <Container>
         <HeaderCalendar />
