@@ -31,7 +31,7 @@ const CarsDetails = (): React.ReactElement => {
         </S.CarName>
         <S.CarPrice>
           <h1>AO DIA</h1>
-          <h2>R$ 580</h2>
+          <h2>R$ 12.480</h2>
         </S.CarPrice>
       </S.HeaderDataContainer>
       <S.DetailsContainer>
@@ -69,21 +69,21 @@ const CarsDetails = (): React.ReactElement => {
           <S.RentContainer>
             <S.DateContainer>
               <h1>DE</h1>
-              <h2>18 Julho 2020</h2>
+              <h2>20 Fevereiro 2021</h2>
             </S.DateContainer>
             <Vector />
             <S.DateContainer>
               <h1>ATÉ</h1>
-              <h2>20 Julho 2020</h2>
+              <h2>22 Fevereiro 2021</h2>
             </S.DateContainer>
           </S.RentContainer>
           <S.PriceSection>
             <S.PriceContainer>
               <S.Text>
                 <h1>TOTAL</h1>
-                <h2>R$ 580 x3 diárias</h2>
+                <h2>R$ 12.480 x3 diárias</h2>
               </S.Text>
-              <h3>R$  2,900</h3>
+              <h3>R$  37.440,00</h3>
             </S.PriceContainer>
             <S.ButtonRent onClick={() => {
               console.log("Carro Alugado com sucesso");
