@@ -15,7 +15,7 @@ const CarCard: FC<IProps> = ({
       model={model}
       {...props}
     />
-    <Image src={imageArray?.[0]} alt={model} />
+    <Image src={imageArray?.[0] } alt={model} />
     <CardFooter fuelType={fuelType} imageArray={imageArray} />
   </Container>
 );
