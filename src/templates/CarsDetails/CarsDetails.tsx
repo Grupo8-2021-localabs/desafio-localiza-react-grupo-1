@@ -23,7 +23,7 @@ const CarsDetails = (): React.ReactElement => {
           <S.Circle />
         </S.ContainerCircle>
       </S.Header>
-      <S.Image src="http://www.pngmart.com/files/10/Lamborghini-Huracan-PNG-Clipart.png" />
+      <S.Image src="http://www.pngmart.com/files/10/Lamborghini-Huracan-PNG-Clipart.png"/>
       <S.HeaderDataContainer>
         <S.CarName>
           <h1>LAMBORGHINI</h1>
