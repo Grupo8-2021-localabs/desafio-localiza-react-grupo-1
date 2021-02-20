@@ -9,8 +9,9 @@ const CarCard: FC<IProps> = ({
   model,
   imageArray,
   fuelType,
-  isCurrent = false,
-  isHistory = false,
+  isCurrent,
+  startDate,
+  endDate,
   ...props
 }: IProps) => (
   <section>
@@ -20,12 +21,12 @@ const CarCard: FC<IProps> = ({
     </Container>
     {isCurrent && (
       <RentContent>
-        <RentCurrent endDate="20 fevereiro 2021" />
+        <RentCurrent endDate={endDate} />
       </RentContent>
     )}
-    {isHistory && (
+    {!isCurrent && (
       <RentContent>
-        <RentHistory startDate="17 fevereiro 2021" endDate="18 fevereiro 2021" />
+        <RentHistory startDate={startDate} endDate={endDate} />
       </RentContent>
     )}
   </section>

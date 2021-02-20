@@ -11,6 +11,7 @@ const initialAuthState: IAuthState = {
   token: undefined,
   userId: undefined,
   userCpf: undefined,
+  checked: false,
 };
 
 const AuthContext = createContext<IAuthContext | null>(null);
@@ -44,7 +45,8 @@ const AuthProvider: FC = ({ children }) => {
       setAuthState({
         token: storedToken,
         userId: storedUser,
-        userCpf: storedCpf
+        userCpf: storedCpf,
+        checked: true
       });
     }
   }, [authState]);
@@ -56,7 +58,8 @@ const AuthProvider: FC = ({ children }) => {
       setAuthState({
         userId,
         token,
-        userCpf
+        userCpf,
+        checked: true,
       });
       storeCredentialsLocally({ userId, token, userCpf });
       return null;

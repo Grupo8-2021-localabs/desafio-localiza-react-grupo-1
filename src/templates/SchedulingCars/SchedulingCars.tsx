@@ -1,27 +1,23 @@
 import { FC } from 'react';
 import CarCard from '../../components/common/CarCard/CarCard';
-import createCarCardProps from '../../components/common/CarCard/helpers/factory';
 import { Container, CarListContainer } from '../../components/home/Container';
 import Menu from '../../components/Menu/Menu';
 import Header from '../../components/common/Header/Header';
+import { IAppAppointment } from '../../services/types';
 
-const cars = [
-  createCarCardProps({ model: 'Carro', isCurrent: true }),
-  createCarCardProps({ model: 'Carro1', isHistory: true }),
-  createCarCardProps({ model: 'Carro2', isHistory: true }),
-  createCarCardProps({ model: 'Carro3', isHistory: true }),
-  createCarCardProps({ model: 'Carro4', isHistory: true }),
-];
+interface IProps {
+  appointments: IAppAppointment[]
+}
 
-const SchedulingCars: FC = () => (
+const SchedulingCars: FC<IProps> = ({ appointments }: IProps) => (
   <>
     <Container>
-      <Header title="Agendamentos" description="5 períodos" />
+      <Header title="Agendamentos" description={`${appointments.length} agendamentos`} />
       <section>
         <CarListContainer>
-          {cars.map((car) => (
+          {appointments.map((appointment) => (
             <>
-              <CarCard key={car.id} {...car} />
+              <CarCard key={appointment.id} {...appointment} />
             </>
           ))}
         </CarListContainer>

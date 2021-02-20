@@ -23,7 +23,6 @@ export const createCarCardProps = (customizedProps?: Partial<IProps>): IProps =>
     imageArray: defaultImageArray,
     fuelType: defaultFuelType,
     isCurrent: defaultCurrent,
-    isHistory: defaultHistory,
     ...customizedProps,
   };
 };
