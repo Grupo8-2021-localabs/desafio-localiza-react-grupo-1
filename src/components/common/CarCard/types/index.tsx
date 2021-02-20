@@ -5,6 +5,7 @@ export interface IProps {
   imageArray: string[];
   fuelType: 'energy' | 'gasoline' | 'hybrid';
   isCurrent?: boolean;
-  isHistory?: boolean;
   model: string;
+  startDate?: string,
+  endDate?: string,
 }

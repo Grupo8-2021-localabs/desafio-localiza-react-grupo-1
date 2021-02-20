@@ -6,16 +6,16 @@ import { Container, CarListContainer } from '../src/components/home/Container';
 import SectionHeader from '../src/components/home/SectionHeader/SectionHeader';
 import Menu from '../src/components/Menu/Menu';
 import HeaderCalendar from '../src/components/HeaderCalendar/HeaderCalendar';
-import { loadCarList } from '../src/services/api';
-import { AppAvailableCar } from '../src/services/types';
+import { loadAvailableCarsList } from '../src/services/api';
+import { IAppAvailableCar } from '../src/services/types';
 import { Button } from '../src/components/Button/ButtonHome';
 
 interface IProps {
-  cars: AppAvailableCar[];
+  cars: IAppAvailableCar[]
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const cars = await loadCarList();
+  const cars = await loadAvailableCarsList();
   return {
     props: {
       cars,

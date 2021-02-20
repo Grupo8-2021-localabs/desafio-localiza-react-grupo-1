@@ -1,21 +1,33 @@
 import axios, { AxiosResponse } from 'axios';
 import {
-  User,
-  AppAvailableCar,
-  UserRegistration
+  IUser,
+  IAppAvailableCar,
+  IUserRegistration,
+  IAppAppointment
 } from './types';
-import { apiCarToAppCar } from './types/adapters';
+import { apiAppointmentToAppAppointment, apiCarToAppCar } from './types/adapters';
 
 const api = axios.create({
   baseURL: 'https://localizatrescamadas.azurewebsites.net/',
 });
 
-export const login = (cpf: string, password: string): Promise<AxiosResponse<User>> => api
+const authorizationHeaders = token => ({
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+});
+
+export const login = (cpf: string, password: string): Promise<AxiosResponse<IUser>> => api
   .post('/clients/login', { cpf, password });
 
-export const loadCarList = (): Promise<AppAvailableCar[]> => api
-  .get('/cars/availableCars').then((data) => data.data.map(apiCarToAppCar));
+export const loadAvailableCarsList = (): Promise<IAppAvailableCar[]> => api
+  .get('/cars/availableCars').then((response) => response.data.map(apiCarToAppCar));
 
-export const registerUser = (user: UserRegistration): Promise<AxiosResponse> => api.post('/clients', user);
+export const registerUser = (user: IUserRegistration): Promise<AxiosResponse> => api
+  .post('/clients', user);
+
+export const loadAppointmentList = (cpf: string, token: string): Promise<IAppAppointment[]> => api
+  .get(`/appointments/clients/${cpf}`, authorizationHeaders(token))
+  .then((response) => response.data.map(apiAppointmentToAppAppointment));
 
 export default api;

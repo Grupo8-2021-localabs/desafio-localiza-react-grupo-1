@@ -17,7 +17,7 @@ export const weekdaysLong = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta',
 
 export const weekdaysShort = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'];
 
-const dateToString = (date): Date =>
+const dateToString = (date: Date): string =>
   date
     .toLocaleDateString('pt-Br', { year: 'numeric', month: 'long', day: 'numeric' })
     .replace(/ de /g, ' ');

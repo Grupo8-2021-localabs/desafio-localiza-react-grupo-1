@@ -5,9 +5,9 @@ import { useAuth } from '../src/components/AuthProvider';
 
 
 export default function Index() : React.ReactElement {
-  const { authState } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  if (authState.token && authState.userId) {
+  if (isLoggedIn()) {
     Router.push('/');
   }
 

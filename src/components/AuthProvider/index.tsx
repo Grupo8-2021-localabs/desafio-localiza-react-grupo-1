@@ -6,9 +6,12 @@ import { login, registerUser } from '../../services/api';
 
 const userPath = '@localiza-academy:userId';
 const tokenPath = '@localiza-academy:token';
+const cpfPath = '@localiza-academy:userCpf';
 const initialAuthState: IAuthState = {
   token: undefined,
   userId: undefined,
+  userCpf: undefined,
+  checked: false,
 };
 
 const AuthContext = createContext<IAuthContext | null>(null);
@@ -16,27 +19,34 @@ const AuthContext = createContext<IAuthContext | null>(null);
 const getLocallyStoredCredentials = () => {
   const storedUser = Number(localStorage.getItem(userPath));
   const storedToken = localStorage.getItem(tokenPath);
+  const storedCpf = localStorage.getItem(cpfPath)
   return {
     storedUser,
     storedToken,
+    storedCpf
   };
 };
 
-const storeCredentialsLocally = ({ userId, token }) => {
+const storeCredentialsLocally = ({ userId, token, userCpf}) => {
   localStorage.setItem(userPath, String(userId));
   localStorage.setItem(tokenPath, token);
+  localStorage.setItem(cpfPath, userCpf);
 };
 
 const AuthProvider: FC = ({ children }) => {
   const [authState, setAuthState] = useState(initialAuthState);
 
   useEffect(() => {
-    const { storedUser, storedToken } = getLocallyStoredCredentials();
+    const { storedUser, storedToken, storedCpf } = getLocallyStoredCredentials();
 
-    if (storedUser !== authState.userId || storedToken !== authState.token) {
+    if (storedUser !== authState.userId
+      || storedToken !== authState.token
+      || storedCpf !== authState.userCpf) {
       setAuthState({
         token: storedToken,
         userId: storedUser,
+        userCpf: storedCpf,
+        checked: true
       });
     }
   }, [authState]);
@@ -44,12 +54,14 @@ const AuthProvider: FC = ({ children }) => {
   const signIn = async (cpf, password) => {
     try {
       const data = await login(cpf, password);
-      const { id: userId, token } = data.data;
+      const { id: userId, token, cpf: userCpf } = data.data;
       setAuthState({
         userId,
         token,
+        userCpf,
+        checked: true,
       });
-      storeCredentialsLocally({ userId, token });
+      storeCredentialsLocally({ userId, token, userCpf });
       return null;
     } catch (e) {
       const isAuthError = /401/.test(e.message);
@@ -86,9 +98,15 @@ const AuthProvider: FC = ({ children }) => {
     }
   };
 
+  const isLoggedIn = () => Boolean(
+    authState.token
+    && authState.userId
+    && authState.userCpf
+  )
+
   return (
     <AuthContext.Provider value={{
-      authState, signIn, signUpAndSignIn
+      authState, signIn, signUpAndSignIn, isLoggedIn
     }}
     >
       {children}

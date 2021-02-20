@@ -1,4 +1,4 @@
-export interface User {
+export interface IUser {
     cpf: string,
     id: number
     name: string,
@@ -6,7 +6,7 @@ export interface User {
     token: string,
 }
 
-export interface UserRegistration {
+export interface IUserRegistration {
   name: string,
   cpf: string,
   password: string,
@@ -19,7 +19,7 @@ export interface UserRegistration {
   state: string
 }
 
-export interface ApiAvailableCar {
+export interface IApiAvailableCar {
   id: number,
   board: string,
   hourPrice: number,
@@ -33,13 +33,45 @@ export interface ApiAvailableCar {
   images?: string[]
 }
 
-export type FuelType = 'energy' | 'hybrid' | 'gasoline';
+export type IFuelType = 'energy' | 'hybrid' | 'gasoline';
 
-export interface AppAvailableCar {
+export interface IAppAvailableCar {
     id: number,
     model: string,
     brand: string,
     dailyRate: number,
     imageArray: string[],
-    fuelType: FuelType,
+    fuelType: IFuelType,
 }
+
+export interface IApiAppointment {
+  id: number,
+  schedule: string,
+  nameClient: string,
+  board: string,
+  model: string,
+  brand: string,
+  fuel: number,
+  category: string,
+  hourPrice: number,
+  hourLocation: number,
+  subtotal: number,
+  images: string[],
+  additionalCosts: number,
+  appointmentCollected: string,
+  appointmentDelivery: string
+}
+
+export interface IAppAppointment {
+  id: number,
+  model: string,
+  brand: string,
+  fuelType: IFuelType,
+  startDate: string,
+  endDate: string,
+  isCurrent: boolean,
+  imageArray: string[],
+  dailyRate: number,
+}
+
+

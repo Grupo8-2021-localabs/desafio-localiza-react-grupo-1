@@ -3,11 +3,11 @@ import Router from 'next/router';
 import Login from '../src/templates/Login/Login';
 import { useAuth } from '../src/components/AuthProvider';
 
-export default function Index(): React.ReactNode {
-  const { authState } = useAuth();
+export default function Index() : React.ReactNode {
+  const { isLoggedIn } = useAuth();
 
-  if (authState.token && authState.userId) {
-    Router.push('/home');
+  if (isLoggedIn()) {
+    Router.push('/');
   }
 
   return (
