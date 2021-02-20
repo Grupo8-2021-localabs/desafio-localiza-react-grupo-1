@@ -46,7 +46,7 @@ export default function Home({ cars }: IProps): React.ReactNode {
               </Button>
             ))}
           </CarListContainer>
-          <Menu />
+          <Menu selected={0} />
         </section>
       </Container>
     </>

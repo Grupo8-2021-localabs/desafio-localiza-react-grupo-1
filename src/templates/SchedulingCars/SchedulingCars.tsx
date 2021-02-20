@@ -21,7 +21,7 @@ const SchedulingCars: FC<IProps> = ({ appointments }: IProps) => (
             </>
           ))}
         </CarListContainer>
-        <Menu />
+        <Menu selected={1} />
       </section>
     </Container>
   </>
