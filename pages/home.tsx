@@ -11,7 +11,7 @@ import { IAppAvailableCar } from '../src/services/types';
 import { Button } from '../src/components/Button/ButtonHome';
 
 interface IProps {
-  cars: IAppAvailableCar[]
+  cars: IAppAvailableCar[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -46,7 +46,7 @@ export default function Home({ cars }: IProps): React.ReactNode {
               </Button>
             ))}
           </CarListContainer>
-          <Menu />
+          <Menu selected={0} />
         </section>
       </Container>
     </>
