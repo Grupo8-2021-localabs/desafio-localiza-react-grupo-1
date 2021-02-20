@@ -5,7 +5,7 @@ import OptionsIcon from '../../icons/OptionsIcon';
 
 const SectionHeader: FC<IProps> = ({ quantity }: IProps) => (
   <Container>
-    <h1>Carros disponíveis</h1>
+    <h1>Resultados</h1>
     <LeftBox>
       <p>{quantity} carros</p>
       <OptionsIcon />
