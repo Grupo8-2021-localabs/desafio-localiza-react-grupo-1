@@ -4,9 +4,9 @@ import Login from '../src/templates/Login/Login';
 import { useAuth } from '../src/components/AuthProvider';
 
 export default function Index() : React.ReactNode {
-  const { authState } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  if (authState.token && authState.userId) {
+  if (isLoggedIn()) {
     Router.push('/');
   }
 
