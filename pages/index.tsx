@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import CarCard from '../src/components/home/CarCard/CarCard';
 import { Container, CarListContainer } from '../src/components/home/Container';
 import SectionHeader from '../src/components/home/SectionHeader/SectionHeader';
@@ -7,6 +8,7 @@ import Menu from '../src/components/Menu/Menu';
 import HeaderCalendar from '../src/components/HeaderCalendar/HeaderCalendar';
 import { loadAvailableCarsList } from '../src/services/api';
 import { IAppAvailableCar } from '../src/services/types';
+import { Button } from '../src/components/Button/ButtonHome';
 
 interface IProps {
   cars: IAppAvailableCar[]
@@ -22,11 +24,12 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Home({ cars }: IProps) : React.ReactNode {
+export default function Home({ cars }: IProps): React.ReactNode {
+  const router = useRouter();
   return (
     <>
       <Head>
-        <title>Desafio Localiza</title>
+        <title>Resultados</title>
       </Head>
       <Container>
         <HeaderCalendar />
@@ -34,7 +37,13 @@ export default function Home({ cars }: IProps) : React.ReactNode {
           <SectionHeader quantity={cars.length} />
           <CarListContainer>
             {cars.map((car) => (
-              <CarCard key={car.id} {...car} />
+              <Button
+                onClick={() => {
+                  router.push('/detalhes-carro');
+                }}
+              >
+                <CarCard key={car.id} {...car} />
+              </Button>
             ))}
           </CarListContainer>
           <Menu />

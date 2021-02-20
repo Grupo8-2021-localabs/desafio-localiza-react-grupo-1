@@ -4,10 +4,17 @@ export const Container = styled.div`
     background-color: #F4F5F6;
     width: calc(100% - 16px);
     height: 240px;
-
+    border-radius: 6px;
+    box-shadow: 0px 2px 7px;
     box-sizing: border-box;
     padding: 24px;
     margin: 16px 8px;
+
+    :hover{
+    background-color: #F4F5F6;
+    box-shadow: 0px 8px 40px #101011;
+    cursor: pointer;
+    }
 
     @media(min-width: 375px){
         width: 343px;

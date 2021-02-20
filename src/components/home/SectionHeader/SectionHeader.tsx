@@ -3,7 +3,7 @@ import { IProps } from './types';
 import { Container, LeftBox } from './styled-components';
 import OptionsIcon from '../../icons/OptionsIcon';
 
-const SectionHeader: FC<IProps> = ({ quantity } : IProps) => (
+const SectionHeader: FC<IProps> = ({ quantity }: IProps) => (
   <Container>
     <h1>Resultados</h1>
     <LeftBox>

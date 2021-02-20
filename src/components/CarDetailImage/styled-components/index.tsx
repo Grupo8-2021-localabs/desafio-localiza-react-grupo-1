@@ -173,6 +173,12 @@ export const DataCard = styled.div`
        color: #7A7A80;
        margin-top: 14px;
     }
+
+    :hover{
+    background-color: #F4F5F6;
+    box-shadow: 0px 2px 7px #101011;
+    cursor: pointer;
+    }
 `;
 
 export const RentContainer = styled.div`
