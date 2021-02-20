@@ -4,12 +4,12 @@ import CarCard from '../src/components/home/CarCard/CarCard';
 import { Container, CarListContainer } from '../src/components/home/Container';
 import SectionHeader from '../src/components/home/SectionHeader/SectionHeader';
 import Menu from '../src/components/Menu/Menu';
-import HeaderCalendar from '../src/components/HeaderCalendar/HeaderCalendar';
+import Header from '../src/components/common/Header/Header';
 import { loadCarList } from '../src/services/api';
 import { AppAvailableCar } from '../src/services/types';
 
 interface IProps {
-  cars: AppAvailableCar[]
+  cars: AppAvailableCar[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -22,14 +22,14 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function Home({ cars }: IProps) : React.ReactNode {
+export default function Home({ cars }: IProps): React.ReactNode {
   return (
     <>
       <Head>
         <title>Desafio Localiza</title>
       </Head>
       <Container>
-        <HeaderCalendar />
+        <Header title="Resultados" />
         <section>
           <SectionHeader quantity={cars.length} />
           <CarListContainer>
