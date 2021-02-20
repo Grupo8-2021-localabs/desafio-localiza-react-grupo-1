@@ -1,10 +1,9 @@
-import { useRouter } from 'next/router'
-import * as S from "../Register/RegisterConfirmation/RegisterConfirmation.styled";
-import Check from '../../components/icons/RegisterConfirmation/Check'
-import Union from '../../components/icons/RegisterConfirmation/Union'
+import { useRouter } from 'next/router';
+import * as S from '../Register/RegisterConfirmation/RegisterConfirmation.styled';
+import Check from '../../components/icons/RegisterConfirmation/Check';
+import Union from '../../components/icons/RegisterConfirmation/Union';
 
-const ConfirmationRent = () : React.ReactElement => {
-
+const ConfirmationRent = (): React.ReactElement => {
   const router = useRouter();
 
   return (
@@ -21,14 +20,13 @@ const ConfirmationRent = () : React.ReactElement => {
       </S.TextContainer>
       <S.OkButton
         onClick={() => {
-          console.log("Aluguel Confirmado com sucesso");
+          console.log('Aluguel Confirmado com sucesso');
           setTimeout(() => {
-          router.push("/");
+            router.push('/');
           }, 1000);
         }}
       >
         Ok
-
       </S.OkButton>
     </S.RegisterConfirmationContainer>
   );

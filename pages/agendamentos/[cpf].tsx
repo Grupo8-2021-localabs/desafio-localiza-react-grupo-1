@@ -8,16 +8,19 @@ import { loadAppointmentList } from '../../src/services/api';
 import { IAppAppointment } from '../../src/services/types';
 
 interface IProps {
-  appointments: IAppAppointment[]
+  appointments: IAppAppointment[];
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { params: { cpf }, query: { token } } = context;
+  const {
+    params: { cpf },
+    query: { token },
+  } = context;
   const emptyProps = {
-    props: { appointments: [] }
+    props: { appointments: [] },
   };
 
-  if(Array.isArray(cpf) || !token || Array.isArray(token)){
+  if (Array.isArray(cpf) || !token || Array.isArray(token)) {
     return emptyProps;
   }
 
@@ -28,31 +31,29 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         appointments,
       },
     };
-  }catch {
+  } catch {
     return emptyProps;
   }
-
 };
 
-export default function AppointmentsPage ({ appointments }: IProps): React.ReactNode {
+export default function AppointmentsPage({ appointments }: IProps): React.ReactNode {
   const router = useRouter();
   const { cpf } = router.query;
   const { authState, isLoggedIn } = useAuth();
 
   useEffect(() => {
-    if(authState.checked){
+    if (authState.checked) {
       if (!isLoggedIn()) {
         router.push('/login');
       }
-      if(cpf !== authState.userCpf || appointments.length === 0 ){
-        router.push('/');
+      if (cpf !== authState.userCpf || appointments.length === 0) {
+        router.push('/home');
       }
     }
   }, [authState, appointments]);
 
-
-  if(!authState.checked){
-    return "Loading..."
+  if (!authState.checked) {
+    return 'Loading...';
   }
 
   return (
