@@ -46,7 +46,7 @@ const ChooseDate: React.FC = () => {
 
   const handleConfirmDate = useCallback(() => {
     if (initialState.from && initialState.to) {
-      router.push(`/?start_date=${initialState.from}&end_date=${initialState.to}`);
+      router.push(`/home?start_date=${initialState.from}&end_date=${initialState.to}`);
     } else {
       alert('Ocorreu um erro! Tente novamente mais tarde.');
     }

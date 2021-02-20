@@ -1,45 +1,13 @@
-import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import CarCard from '../src/components/home/CarCard/CarCard';
-import { Container, CarListContainer } from '../src/components/home/Container';
-import SectionHeader from '../src/components/home/SectionHeader/SectionHeader';
-import Menu from '../src/components/Menu/Menu';
-import Header from '../src/components/common/Header/Header';
-import { loadCarList } from '../src/services/api';
-import { AppAvailableCar } from '../src/services/types';
+import ChooseDate from '../src/templates/ChooseDate/ChooseDate';
 
-interface IProps {
-  cars: AppAvailableCar[];
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const cars = await loadCarList();
-  return {
-    props: {
-      cars,
-    },
-    revalidate: 30,
-  };
-};
-
-export default function Home({ cars }: IProps): React.ReactNode {
+export default function Index(): React.ReactElement {
   return (
     <>
       <Head>
-        <title>Desafio Localiza</title>
+        <title>Escolha a Data</title>
       </Head>
-      <Container>
-        <Header title="Resultados" />
-        <section>
-          <SectionHeader quantity={cars.length} />
-          <CarListContainer>
-            {cars.map((car) => (
-              <CarCard key={car.id} {...car} />
-            ))}
-          </CarListContainer>
-          <Menu />
-        </section>
-      </Container>
+      <ChooseDate />
     </>
   );
 }
